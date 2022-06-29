@@ -1,0 +1,63 @@
+{
+	"name": "yeap-vite-preset",
+	"version": "1.0.0",
+	"description": "Yeap preset for Vite",
+	"main": "./dist/cjs/index.js",
+	"module": "./dist/esm/index.mjs",
+	"exports": {
+		".": {
+			"import": "./dist/esm/index.mjs",
+			"require": "./dist/cjs/index.js"
+		},
+		"./package.json": "./package.json"
+	},
+	"types": "dist/types/index.d.ts",
+	"scripts": {
+		"dev": "vite demo",
+		"dev:build": "vite build demo",
+		"build": "rimraf dist && tsc && tsc -p tsconfig.cjs.json && node tools/postbuild.mjs",
+		"prepublishOnly": "npm run build"
+	},
+	"keywords": [
+		"yeap",
+		"vite",
+		"vite-preset",
+		"preset"
+	],
+	"author": "hanako-eo",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/yeapjs/vite-preset.git"
+	},
+	"license": "MIT",
+	"files": [
+		"dist/"
+	],
+	"peerDependencies": {
+		"vite": "2.x || 3.x",
+		"yeap": "1.x"
+	},
+	"devDependencies": {
+		"@types/node": "^18.0.0",
+		"prettier": "^2.2.1",
+		"rimraf": "^3.0.2",
+		"simple-git-hooks": "^2.0.2",
+		"ts-node": "^9.1.1",
+		"typescript": "^4.2.3",
+		"vite": "^2.6.7",
+		"yeap": "^1.0.0-beta.3"
+	},
+	"lint-staged": {
+		"**/*.{js,jsx,ts,tsx,yml}": [
+			"prettier --write"
+		]
+	},
+	"simple-git-hooks": {
+		"pre-commit": "npx lint-staged"
+	},
+	"prettier": {
+		"useTabs": true,
+		"arrowParens": "avoid",
+		"trailingComma": "all"
+	}
+}
