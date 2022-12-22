@@ -5,9 +5,8 @@ import "./index.css";
 function App() {
 	return (
 		<div>
-			<h1>Hello from Preact</h1>
+			<h1>Hello from Yeap</h1>
 			<Foo />
-			<h2>Compat</h2>
 		</div>
 	);
 }

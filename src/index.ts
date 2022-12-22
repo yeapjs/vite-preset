@@ -8,9 +8,9 @@ export default function yeapPlugin(): Plugin[] {
 			config(config, _env) {
 				config.esbuild = {
 					...config.esbuild,
-					jsxFactory: "h",
-					jsxFragment: "Fragment",
-					jsxInject: `import {h} from "yeap/web"\nimport {Fragment} from "yeap/components"`
+					jsxFactory: "__auto_h",
+					jsxFragment: "__auto_Fragment",
+					jsxInject: `import { h as __auto_h } from "yeap/web"\nimport { Fragment as __auto_Fragment } from "yeap/components"`
 				}
 			},
 		}

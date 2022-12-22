@@ -1,6 +1,6 @@
 {
 	"name": "yeap-vite-preset",
-	"version": "1.0.0",
+	"version": "1.1.0",
 	"description": "Yeap preset for Vite",
 	"main": "./dist/cjs/index.js",
 	"module": "./dist/esm/index.mjs",
