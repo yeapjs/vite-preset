@@ -1,4 +1,5 @@
 import { render } from "yeap/web";
+import { Bar } from "./Bar";
 import { Foo } from "./Foo";
 import "./index.css";
 
@@ -7,6 +8,7 @@ function App() {
 		<div>
 			<h1>Hello from Yeap</h1>
 			<Foo />
+			<Bar />
 		</div>
 	);
 }

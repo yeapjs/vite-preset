@@ -8,11 +8,12 @@ export default function yeapPlugin(): Plugin[] {
 			config(config, _env) {
 				config.esbuild = {
 					...config.esbuild,
+					jsx: "transform",
 					jsxFactory: "__auto_h",
 					jsxFragment: "__auto_Fragment",
-					jsxInject: `import { h as __auto_h } from "yeap/web"\nimport { Fragment as __auto_Fragment } from "yeap/components"`
-				}
+					jsxInject: `import { h as __auto_h } from "yeap/web"\nimport { Fragment as __auto_Fragment } from "yeap/components"`,
+				};
 			},
-		}
+		},
 	];
 }
